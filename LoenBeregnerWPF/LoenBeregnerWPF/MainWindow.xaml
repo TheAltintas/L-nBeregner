@@ -1,0 +1,40 @@
+﻿<Window x:Class="LoenBeregnerWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Løn Beregner" Height="400" Width="550">
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Text="Antal timer:" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" Margin="5"/>
+        <TextBox Name="HoursWorkedTextBox" Grid.Row="0" Grid.Column="1" Margin="5"/>
+
+        <TextBlock Text="Antal timer med tillæg:" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" Margin="5"/>
+        <TextBox Name="ExtraHoursWorkedTextBox" Grid.Row="1" Grid.Column="1" Margin="5"/>
+
+        <TextBlock Text="Timeløn (standard 139kr):" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" Margin="5"/>
+        <TextBox Name="HourlyWageTextBox" Grid.Row="2" Grid.Column="1" Margin="5"/>
+
+        <TextBlock Text="SU sats (standard 1824kr):" Grid.Row="3" Grid.Column="0" VerticalAlignment="Center" Margin="5"/>
+        <TextBox Name="SUTextBox" Grid.Row="3" Grid.Column="1" Margin="5"/>
+
+        <TextBlock Text="Personfradrag (standard 4352kr):" Grid.Row="4" Grid.Column="0" VerticalAlignment="Center" Margin="5"/>
+        <TextBox Name="TaxDeductionTextBox" Grid.Row="4" Grid.Column="1" Margin="5"/>
+
+        <Button Name="CalculateButton" Content="Beregn" Grid.Row="5" Grid.ColumnSpan="2" Margin="5" Click="CalculateButton_Click"/>
+        <Button Name="NewCalculationButton" Content="Ny Beregning" Grid.Row="6" Grid.ColumnSpan="2" Margin="5" Visibility="Collapsed" Click="NewCalculationButton_Click"/>
+        <TextBlock Name="ResultTextBlock" Grid.Row="7" Grid.ColumnSpan="2" Margin="5" TextWrapping="Wrap"/>
+    </Grid>
+</Window>
